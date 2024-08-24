@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/header.css' %}">
+</head>
+<body>
+    <div class="navbody">
+        <div class="logobox">
+            <img src="{% static 'images/logo-black.png' %}" height="100px">
+        </div>
+        <div class="navigation">
+          <ul>
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'search' %}">Search</a>
+            <a href="{% url 'category' %}">Category</a>
+            <a href="{% url 'newblog' %}">write</a>
+            <a href="{% url 'myprofile' %}">Profile</a>
+          </ul>
+        </div>
+      </div>
+</body>
+</html>

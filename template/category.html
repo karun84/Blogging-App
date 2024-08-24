@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="page-title wb">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                <h2><i class="fa fa-th bg-favicon"></i> Category </h2>
+            </div><!-- end col -->                  
+        </div><!-- end row -->
+    </div><!-- end container -->
+</div>
+
+<div class="categorybody">
+    {% for i in category %}
+    <a href="{% url 'cat-blogs' i.slug %}"><div class="notification">
+        <div class="notiglow"></div>
+        <div class="notiborderglow"></div>
+        <div class="notititle">{{i|upper}}</div>
+    </div></a>
+    {% endfor %}
+</div>
+
+{% endblock %}

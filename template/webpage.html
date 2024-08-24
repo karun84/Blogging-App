@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!-- Favicon
+    ================================================== -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'webpage/assets/img/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'webpage/assets/img/favicon.png' %}">
+
+    <!-- Stylesheets
+    ================================================== -->
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'webpage/assets/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'webpage/assets/css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'webpage/assets/css/responsive.css' %}" rel="stylesheet">
+
+
+</head>
+<body>
+
+    <header id="masthead" class="site-header">
+        <nav id="primary-navigation" class="site-navigation">
+            <div class="container">
+
+                <div class="navbar-header">
+                   
+                    <a class="site-title"><img src="{% static 'webpage/assets/img/logo/logo-black.png' %}" height="100px" ></a>
+
+                </div><!-- /.navbar-header -->
+
+                <div class="collapse navbar-collapse" id="agency-navbar-collapse">
+
+                    <ul class="nav navbar-nav navbar-right">
+
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Genres</a></li>
+                        <li><a href="#">Stats</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                        
+                    </ul>
+
+                </div>
+
+            </div>   
+        </nav><!-- /.site-navigation -->
+    </header><!-- /#mastheaed -->
+
+    <div id="hero" class="hero overlay">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Your Blogging Begins Here.</h1>
+                <p> Unlock the power of your words. Our blogging website is the key to a world of creative expression.</p>
+                <a href="{% url 'login' %}" class="btn btn-border">Login/Register</a>
+            </div><!-- /.hero-text -->
+        </div><!-- /.hero-content -->
+    </div><!-- /.hero -->
+
+    <main id="main" class="site-main">
+
+        <section class="site-section section-features">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-5">
+                        <h2>Elevate your narrative</h2>
+                        <p> In a world where expression and connectivity reign supreme, finding a platform that seamlessly integrates your thoughts and creativity becomes paramount. Enter Bloggy, the blogging application that goes beyond the conventional, offering a transformative experience for writers and content creators alike. Bloggy is not just a blogging application; it's a companion on your creative journey. Whether you're a seasoned writer or just starting, this app is the bridge between your thoughts and the world. Embrace the future of blogging with Bloggy and redefine the way you share your stories. Register now and let your words come to life!</p>
+                    </div>
+                    <div class="col-sm-7 hidden-xs">
+                        <img src="{% static 'webpage/assets/img/twriter.jpg' %}" alt="" height="200px" width="350px">
+                    </div>
+                </div>
+            </div>
+        </section><!-- /.section-features -->
+
+        <section class="site-section section-services gray-bg text-center">
+            <div class="container">
+                <h2 class="heading-separator"> Blog Genres</h2>
+                <p class="subheading-text">Remember, the key to a successful blog is to find your unique voice and passion.</p>
+                <div class="row">
+                    <div class="col-md-3 col-xs-6">
+                        <div class="service">
+                            <img src="{% static 'webpage/assets/img/personal.svg' %}" height="80px" alt="">
+                            <h3 class="service-title">Personal</h3>
+                            <p class="service-info"> Share your daily experiences, thoughts,and express your opinions on various topics that interest you.</p>
+                        </div><!-- /.service -->
+                    </div>
+                    <div class="col-md-3 col-xs-6">
+                        <div class="service">
+                            <img src="{% static 'webpage/assets/img/fitness.svg' %}" height="80px" alt="">
+                            <h3 class="service-title">Fitness</h3>
+                            <p class="service-info">Writing for a fitness blog allows you to inspire, educate, and motivate your readers to lead a healthy and active lifestyle. </p>
+                        </div><!-- /.service -->
+                    </div>
+                    <div class="col-md-3 col-xs-6">
+                        <div class="service">
+                            
+                            <img src="{% static 'webpage/assets/img/paper-plane.svg' %}" height="80px" alt="">
+                            <h3 class="service-title">Travel</h3>
+                            <p class="service-info">A travel blog provides the perfect platform to share your adventures, inspire others to explore, and offer practical tips for fellow travelers.</p>
+                        </div><!-- /.service -->
+                    </div>
+                    <div class="col-md-3 col-xs-6">
+                        <div class="service">
+                            <img src="{% static 'webpage/assets/img/photo.svg' %}" height="80px" alt="">
+                            <h3 class="service-title">Lifestyle</h3>
+                            <p class="service-info">A lifestyle blog covers a wide range of topics, allowing you to share various aspects of your life and interests.</p>
+                        </div><!-- /.service -->
+                    </div>
+                    <div class="col-md-3 col-xs-6">
+                        <div class="service">
+                            <img src="{% static 'webpage/assets/img/news.svg' %}" height="80px" alt="">
+                            <h3 class="service-title">News</h3>
+                            <p class="service-info">Provide real-time updates on breaking news stories in your niche or region.</p>
+                        </div><!-- /.service -->
+                    </div>
+                    <div class="col-md-3 col-xs-6">
+                        <div class="service">
+                            <img src="{% static 'webpage/assets/img/business.svg' %}" height="80px" alt="">
+                            <h3 class="service-title">Business</h3>
+                            <p class="service-info">Running a business blog offers a platform to share insights, advice, and updates related to the business world.</p>
+                        </div><!-- /.service -->
+                    </div>
+                    <div class="col-md-3 col-xs-6">
+                        <div class="service">
+                            <img src="{% static 'webpage/assets/img/basket.svg' %}" height="80px" alt="">
+                            <h3 class="service-title">Fashion</h3>
+                            <p class="service-info">A fashion blog provides a creative space to share personal style, fashion trends, beauty tips and even OutfitOfTheDay(OOTD).</p>
+                        </div><!-- /.service -->
+                    </div>
+                    <div class="col-md-3 col-xs-6">
+                        <div class="service">
+                            <img src="{% static 'webpage/assets/img/food.svg' %}" height="80px" alt="">
+                            <h3 class="service-title">Food</h3>
+                            <p class="service-info">A food blog offers a delightful platform to share culinary adventures, recipes, and gastronomic experiences.</p>
+                        </div><!-- /.service -->
+                    </div>
+                </div>
+            </div>
+        </section><!-- /.section-services -->
+
+        <section class="site-section section-map-feature text-center">
+
+            <div class="container">
+                <h2>Users all around the world</h2>
+                <p>In the vast and dynamic world of the blogosphere, every user contributes a unique thread to the intricate tapestry of online expression. In this post, we'll embark on a journey to explore the diverse individuals who populate our blogging app, uncovering the stories, motivations, and passions that drive them to share their voices with the world.</p>
+                <a href="{% url 'login' %}" class="btn btn-fill">Register</a>
+                <div class="row">
+                    <div class="col-sm-3 col-xs-6">
+                        <div class="counter-item">
+                            <p class="counter" data-to="377" data-speed="2000">0</p>
+                            <h3>Users</h3>
+                        </div><!-- /.counter-item -->
+                    </div>
+                    <div class="col-sm-3 col-xs-6">
+                        <div class="counter-item">
+                            <p class="counter" data-to="1204" data-speed="2000">0</p>       
+                            <h3>Total Blogs</h3>
+                        </div> <!-- /.counter-item -->      
+                    </div>
+                    <div class="col-sm-3 col-xs-6">
+                        <div class="counter-item">
+                            <p class="counter" data-to="50" data-speed="1000">0</p>
+                            <h3>Readers Per Day</h3>
+                        </div><!-- /.counter-item -->
+                    </div>
+                    <div class="col-sm-3 col-xs-6">
+                        <div class="counter-item">
+                            <p class="counter" data-to="675" data-speed="1000">0</p>
+                            <h3>Total Readers</h3>
+                        </div><!-- /.counter-item -->
+                    </div>
+                </div>
+            </div>
+            
+        </section><!-- /.section-map-feature -->
+
+
+        <section class="site-section section-portfolio">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="heading-separator">Latest Blogs</h2>
+                    <p class="subheading-text">This is some of our latest blogs</p>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3 col-md-4 col-xs-6">
+                        <div class="portfolio-item">
+                            <img src="{% static 'webpage/assets/img/portfolio-1.jpg' %}" class="img-res" alt="">
+                            <h4 class="portfolio-item-title">Portfolio item</h4>
+                            <a href="#"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                        </div><!-- /.portfolio-item -->
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-xs-6">
+                        <div class="portfolio-item">
+                            <img src="{% static 'webpage/assets/img/portfolio-2.jpg' %}" class="img-res" alt="">
+                            <h4 class="portfolio-item-title">Portfolio item</h4>
+                            <a href="#"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                        </div><!-- /.portfolio-item -->
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-xs-6">
+                        <div class="portfolio-item">
+                            <img src="{% static 'webpage/assets/img/portfolio-3.jpg' %}" class="img-res" alt="">
+                            <h4 class="portfolio-item-title">Portfolio item</h4>
+                            <a href="#"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                        </div><!-- /.portfolio-item -->
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-xs-6">
+                        <div class="portfolio-item">
+                            <img src="{% static 'webpage/assets/img/portfolio-4.jpg' %}" class="img-res" alt="">
+                            <h4 class="portfolio-item-title">Portfolio item</h4>
+                            <a href="#"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                        </div><!-- /.portfolio-item -->
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-xs-6">
+                        <div class="portfolio-item">
+                            <img src="{% static 'webpage/assets/img/portfolio-5.jpg' %}" class="img-res" alt="">
+                            <h4 class="portfolio-item-title">Portfolio item</h4>
+                            <a href="#"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                        </div><!-- /.portfolio-item -->
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-xs-6">
+                        <div class="portfolio-item">
+                            <img src="{% static 'webpage/assets/img/portfolio-6.jpg' %}" class="img-res" alt="">
+                            <h4 class="portfolio-item-title">Portfolio item</h4>
+                            <a href="#"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                        </div><!-- /.portfolio-item -->
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-xs-6">
+                        <div class="portfolio-item">
+                            <img src="{% static 'webpage/assets/img/portfolio-1.jpg' %}" class="img-res" alt="">
+                            <h4 class="portfolio-item-title">Portfolio item</h4>
+                            <a href="#"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                        </div><!-- /.portfolio-item -->
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-xs-6">
+                        <div class="portfolio-item">
+                            <img src="{% static 'webpage/assets/img/portfolio-2.jpg' %}" class="img-res" alt="">
+                            <h4 class="portfolio-item-title">Portfolio item</h4>
+                            <a href="#"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                        </div><!-- /.portfolio-item -->
+                    </div>
+                </div>
+            </div>
+        </section><!-- /.section-portfolio -->
+
+
+    </main><!-- /#main -->
+
+    <footer id="colophon" class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-4 col-xs-6">
+                    <a class="site-title"><img src="{% static 'webpage/assets/img/logo/logo-black.png' %}" height="100px" ></a>
+                    <p>Every blog is a step toward a world enriched by diverse voices and shared stories. Start your blogging journey with us, and let your words paint the canvas of your unique digital expression..</p>
+                    <p></p>
+                </div>
+                <div class="col-lg-offset-4 col-md-3 col-sm-4 col-md-offset-2 col-sm-offset-0 col-xs-6 ">
+                    <h3>Keep in touch</h3>
+                    <ul class="list-unstyled contact-links">
+                        <li><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:info@agencyperfect.com">info@bloggy.com</a></li>
+                        <li><i class="fa fa-phone" aria-hidden="true"></i><a href="tel:+37400800000">+374 (00) 80 00 00 </a></li>
+                        <li><i class="fa fa-fax" aria-hidden="true"></i><a href="+37400900000">+374 (00) 90 00 00</a></li>
+                        <li><i class="fa fa-map-marker" aria-hidden="true"></i><p>20 Leo, Armenia</p></li>
+                    </ul>
+                </div>
+                <div class="clearfix visible-xs"></div>
+                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                    <h3>General</h3>
+                    <ul class="list-unstyled">
+
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Genres</a></li>
+                        <li><a href="#">Stats</a></li>
+                        <li><a href="#">Contact</a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-8">
+                        <div class="social-links">
+                            <a class="twitter-bg" href="#"><i class="fa fa-twitter"></i></a>
+                            <a class="facebook-bg" href="#"><i class="fa fa-facebook"></i></a>
+                            <a class="pinterest" href="#"><i class="fa fa-pinterest"></i></a>
+                            <a class="linkedin-bg" href="#"><i class="fa fa-linkedin"></i></a>
+                        </div><!-- /.social-links -->
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="text-right">
+                            <p>&copy; Bloggy</p>
+                            <p>All Rights Reserved &trade;</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- /.copyright -->
+    </footer><!-- /#footer -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js' %}"></script>
+    <script src="{% static 'webpage/assets/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'webpage/assets/js/bootstrap-select.min.js' %}"></script>
+    <script src="{% static 'webpage/assets/js/jquery.slicknav.min.js' %}"></script>
+    <script src="{% static 'webpage/assets/js/jquery.countTo.min.js' %}"></script>
+    <script src="{% static 'webpage/assets/js/jquery.shuffle.min.js' %}"></script>
+    <script src="{% static 'webpage/assets/js/script.js ' %}"></script>
+  
+</body>
+</html>

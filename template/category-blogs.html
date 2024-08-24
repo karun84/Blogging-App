@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="page-title wb">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                <h2><i class="fa fa-th-large bg-favicon"></i>{{category|upper}}</h2>
+            </div><!-- end col -->                  
+        </div><!-- end row -->
+    </div><!-- end container -->
+</div>
+
+
+<section class="section wb">
+    {% for blog in blogs %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+                <div class="page-wrapper">
+                    <div class="blog-list clearfix">
+                        <div class="blog-box row">
+                            <div class="col-md-4">
+                                <div class="post-media">
+                                    <a href="#" title="">
+                                        <img src="/{{ blog.image1 }}" alt="" class="img-fluid">
+                                        <div class="hovereffect"></div>
+                                    </a>
+                                </div><!-- end media -->
+                            </div><!-- end col -->
+
+                            <div class="blog-meta big-meta col-md-8">
+                                <span class="bg-aqua">{{blog.category}}</span>
+                                <h4><a href="{% url 'openblog' blog.slug %}">{{ blog.title }}</a></h4>
+                                <p>{{blog.body|truncatechars_html:230|safe }}</p>
+                                <small>{{blog.date}}</small>
+                                <small><a href="{% url 'authorprofile' blog.author.slug %}">by {{ blog.author.author }}</a></small>
+                            </div><!-- end meta -->
+                        </div><!-- end blog-box -->
+
+                        <hr class="invis">
+
+                       
+                        <hr class="invis">
+
+
+                    </div><!-- end blog-list -->
+                </div><!-- end page-wrapper -->
+
+                <hr class="invis">
+
+               
+            </div><!-- end col -->
+            
+            
+        </div><!-- end row -->
+    </div><!-- end container -->
+    {% endfor %}
+</section>
+
+
+{% endblock %}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% extends 'base.html' %}
+    {% load static %}
+
+</head>
+
+<body>
+
+
+{% block content %}
+
+        <section class="section first-section">
+            <div class="container-fluid">
+                <div class="masonry-blog clearfix">
+
+
+                    {% for last in random%}
+                    <div class="right-side hidden-md-down">
+                        <div class="masonry-box post-media">
+                             <img src="{{last.image1}}" alt="" class="img-fluid">
+                             <div class="shadoweffect">
+                                <div class="shadow-desc">
+                                    <div class="blog-meta">
+                                        <span class="bg-aqua"><a href="#">{{last.category}}</a></span>
+                                        <h4><a href="{% url 'openblog' last.slug %}">{{last.title}}</a></h4>
+                                        <small><a href="{% url 'openblog' last.slug %}">{{last.date}}</a></small>
+                                        <small><a href="{% url 'authorprofile' last.author.slug %}">by {{last.author}}</a></small>
+                                    </div><!-- end meta -->
+                                </div><!-- end shadow-desc -->
+                             </div><!-- end shadow -->
+                        </div><!-- end post-media -->
+                    </div><!-- end right-side -->
+                    {% endfor %}
+
+
+                </div><!-- end masonry -->
+            </div>
+        </section>
+
+        <!-- SEARCHBAR -->
+        <div class="page-title wb">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                        <h2><i class="fa bg-favicon fa-globe"></i> Latest Blogs</h2>
+                    </div><!-- end col -->                  
+                </div><!-- end row -->
+            </div><!-- end container -->
+        </div>
+
+
+
+        <!-- BLOG section -->
+        <section class="section wb">
+            {% for blog in blogs %}
+        
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+                        <div class="page-wrapper">
+                            <div class="blog-list clearfix">
+                                <div class="blog-box row">
+                                    <div class="col-md-4">
+                                        <div class="post-media">
+                                            <a href="{% url 'openblog' blog.slug %}" title="">
+                                                <img src="{{ blog.image1 }}" alt="" class="img-fluid">
+                                                <div class="hovereffect"></div>
+                                            </a>
+                                        </div><!-- end media -->
+                                    </div><!-- end col -->
+
+                                    <div class="blog-meta big-meta col-md-8">
+                                        <span class="bg-aqua"><a href="{% url 'cat-blogs' blog.category.slug %}">{{blog.category}}</a></span>
+                                        <h4><a href="{% url 'openblog' blog.slug %}">{{ blog.title }}</a></h4>
+                                        <p>{{blog.body|truncatechars_html:230|safe }}</p>
+                                        <small>{{blog.date}}</small>
+                                        <small><a href="{% url 'authorprofile' blog.author.slug %}">by {{ blog.author.author }}</a></small>
+                                    </div><!-- end meta -->
+                                </div><!-- end blog-box -->
+
+                                <hr class="invis">
+
+                               
+                                <hr class="invis">
+
+
+                            </div><!-- end blog-list -->
+                        </div><!-- end page-wrapper -->
+
+                        <hr class="invis">
+
+                       
+                    </div><!-- end col -->
+                    
+                    
+                </div><!-- end row -->
+            </div><!-- end container -->
+            {% endfor %}
+        </section>
+
+{% endblock %}
+
+    <script src="{% static 'js/jquery.min.js'%}"></script>
+    <script src="{% static 'js/tether.min.js'%}"></script>
+    <script src="{% static 'js/bootstrap.min.js'%}"></script>
+    <script src="{% static 'js/custom.js'%}"></script>
+
+</body>
+</html>

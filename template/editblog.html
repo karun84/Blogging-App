@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% extends 'base.html' %}
+    {% load static %}
+</head>
+
+<body>
+    {% block content %}
+    <div class="page-title wb">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                    <h2><i class="fa fa-pencil bg-favicon"></i> Edit Blog </h2>
+                </div><!-- end col -->                  
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </div>
+    <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="blogformbody">
+        <div class="formleft">
+            
+            <label for="">Title:{{form.title}}</label>
+            <label for="">Tags:{{form.tags}}</label>   
+            <label for="">Image:{{form.image1}}</label>
+            <button type="submit">Submit</button>
+        </div>
+        <div class="formright">
+            <label for="">Body:</label>
+            <div class="richtext">
+                {{form.media}}
+                {{form.body}}
+            </div>
+        </div>
+    </div>
+    </form>
+    {% endblock %}
+</body>
+</html>
+

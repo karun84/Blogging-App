@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<head>
+    {% extends 'base.html' %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'blogform.css' %} ">
+</head>
+<body>
+    
+
+{% block content %}
+<div class="page-title wb">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                <h2><i class="fa fa-search bg-favicon"></i> Search</h2>
+            </div><!-- end col -->
+            <div class="col-lg-4 col-md-4 col-sm-12 hidden-xs-down hidden-sm-down">
+                <div class="widget">
+                    <form class="form-inline search-form" method="get">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search on the site" name="search">
+                        </div>
+                        <button type="submit" class="btn btn-primary"><i class="fa fa-search bg-favicon"></i></button>
+                    </form>
+                </div><!-- end widget -->
+            </div><!-- end col -->                    
+        </div><!-- end row -->
+    </div><!-- end container -->
+</div>
+
+
+<div class="page-title wb">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                <h2><i class="fa fa-square-poll-horizontal bg-favicon"></i> Results for : &nbsp;" {{ search }} "</h2>
+            </div><!-- end col -->               
+        </div><!-- end row -->
+    </div><!-- end container -->
+</div>
+
+
+<section class="section wb">
+    {% for blog in blogs %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+                <div class="page-wrapper">
+                    <div class="blog-list clearfix">
+                        <div class="blog-box row">
+                            <div class="col-md-4">
+                                <div class="post-media">
+                                    <a href="#" title="">
+                                        <img src="/{{ blog.image1 }}" alt="" class="img-fluid">
+                                        <div class="hovereffect"></div>
+                                    </a>
+                                </div><!-- end media -->
+                            </div><!-- end col -->
+
+                            <div class="blog-meta big-meta col-md-8">
+                                <span class="bg-aqua">{{blog.category}}</span>
+                                <h4><a href="{% url 'openblog' blog.slug %}">{{ blog.title }}</a></h4>
+                                <p>{{blog.tags}}</p>
+                                <small>{{blog.date}}</small>
+                                <small><a href="{% url 'authorprofile' blog.author.slug %}">by {{ blog.author.author }}</a></small>
+                            </div><!-- end meta -->
+                        </div><!-- end blog-box -->
+
+                        <hr class="invis">
+
+                       
+                        <hr class="invis">
+
+
+                    </div><!-- end blog-list -->
+                </div><!-- end page-wrapper -->
+
+                <hr class="invis">
+
+               
+            </div><!-- end col -->
+            
+            
+        </div><!-- end row -->
+    </div><!-- end container -->
+    {% endfor %}
+</section>
+{% endblock %}
+
+</body>

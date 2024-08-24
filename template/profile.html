@@ -1,0 +1,178 @@
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/main.d8e0d294.css' %}">
+
+<style>
+  body{
+    background-color:#dbd3d8;
+  }
+  .blogbody{
+    background-color: ;
+    margin-left: 10px;
+    height: 350px;
+    width: 30%;
+    text-overflow: clip;
+    word-wrap: break-word;
+  }
+  .blogbody img{
+    height: 50%;
+    width: 100%;
+  }
+  .blogoptions{
+    position: relative;
+    bottom: 0;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .blogoptions p{
+    font-size: 18px;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: #FFD700;
+    background-color: white;
+    border: 1px solid skyblue;
+    border-radius: 15px;
+  }
+  .blogoptions a{
+    text-decoration: none !important;
+  }
+  .blogoptions p:hover{
+    background-color:black;
+    color: white;
+    text-decoration: none !important;
+  }
+  .navbody{
+  background-color: #dbd3d8 !important;
+}
+
+.navigation{
+  color: white !important;
+}
+</style>
+<body>
+{% block content %}
+
+
+<div class="navbody" style="padding-top: 3rem;">
+  <div class="logobox">
+    <img src="{% static 'images/logo-black.png' %}" height="100px">
+  </div>
+  <div class="navigation">
+    <ul>
+      <a href="{% url 'home' %}">Home</a>
+      <a href="{% url 'search' %}">Search</a>
+      <a href="{% url 'category' %}">Category</a>
+      <a href="{% url 'newblog' %}">write</a>
+      <a href="{% url 'myprofile' %}">Profile</a>
+    </ul>
+  </div>
+</div>
+
+
+<main class="content-wrapper">
+
+  <!-- Name -->
+  <header class="white-text-container section-container">
+    <div class="text-center">
+      <h1>I am {{user.author}}</h1>
+      <p>{{user.designation}}</p>
+    </div>
+  </header>
+
+
+ <div class="container">
+   <div class="row">
+     <div class="col-xs-12">
+
+      <!-- About Me -->
+        <div class="card">
+          <div class="card-block">
+            <h2>About me</h2>
+            <div class="row">
+              <div class="col-md-4">
+                <img src="/{{user.profileimage}}" class="img-responsive imgsize" >
+              </div>
+              <div class="col-md-8 aboutdiv">
+
+                  <p>{{user.bio}}</p>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Blogs -->
+        <div class="card">
+          <div class="card-block">
+            <h2>Blogs</h2>
+            <div class="row">
+            {% for blog in blog %}
+              <div class="col-md-4 blogbody">
+                <img src="/{{blog.image1}}" class="img-responsive" >
+                <a href="{% url 'openblog' blog.slug %}"><h3 class="h5">{{blog.title}}</h3></a>
+                <p>{{blog.date}}</p>
+                {% if request.user == user.user %}
+                <div class="blogoptions">
+                  <a href="{% url 'editblog' blog.id %}"><p>&nbsp;&nbsp; Edit &nbsp;&nbsp;</p></a>
+                  <a href="{% url 'deleteblog' blog.id %}" onclick="return confirm('Are you sure want to Delete `{{blog.title}}` ')"><p>&nbsp;&nbsp; Delete &nbsp;&nbsp;</p></a>
+                </div>
+                {% endif %}
+              </div>
+            {% endfor %}
+            </div>
+          </div>
+        </div>
+        
+        <!-- Education -->
+        <div class="card">
+          <div class="card-block">
+            <h2>Education</h2>
+            <div class="row">
+              <div class="col-md-4">
+                <div class="education-experience">
+                  
+                  <h3 class="h5 date-title">{{user.education}}</h3>
+                  
+                </div> 
+              </div>             
+            </div>
+          </div>
+        </div>
+
+        <!-- Social Network -->
+        <div class="card">
+          <div class="card-block">
+            <h2>Social Network</h2>
+            <div class="row">
+              <div class="col-md-3">
+                <p class="social-buttons"><span class="social-round-icon fa-icon"><i class="fa fa-twitter"></i></span>@{{user}}</p>
+              </div>
+              <div class="col-md-3">
+                <p class="social-buttons"><span class="social-round-icon fa-icon"><i class="fa fa-linkedin"></i></span>{{user}}</p>
+              </div>
+              <div class="col-md-3">
+                <p class="social-buttons"><span class="social-round-icon fa-icon"><i class="fa fa-instagram"></i></span>{{user}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+     </div>
+   </div>
+ </div>
+<div class="profile-options">
+  <a href="{% url 'edit-profile' %}">Edit Profile</a>
+  <a href="{% url 'logout' %}">Logout</a>
+</div>
+</main>
+<script>
+  document.addEventListener("DOMContentLoaded", function (event) {
+     scrollRevelation('.card');
+  });
+</script>
+<script type="text/javascript" src="{% static 'js/main.bc58148c.js' %}"></script>
+
+{% endblock %}
+</body>
+</html>

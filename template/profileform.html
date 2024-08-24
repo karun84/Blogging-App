@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'authforms/css/form.css' %}">
+</head>
+
+
+<body>
+<div class="formbold-main-wrapper">
+    <div>
+        <img src="{% static 'authforms/images/profile-image.jpg' %}" height="400px">
+    </div>
+  <div class="formbold-form-wrapper">
+    <h1>PROFILE</h1><br>
+    <form  method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+        <div class="formbold-input-flex">
+          <div>
+              {{form.author}}
+              <label for="firstname" class="formbold-form-label"> Author name :</label>
+          </div>
+          <div>
+
+              {{form.designation}}
+              <label for="lastname" class="formbold-form-label"> Designation : </label>
+          </div>
+        </div>
+
+
+        <div class="formbold-textarea">
+
+            {{form.education}}
+            <label for="message" class="formbold-form-label"> Education :</label>
+        </div>
+
+
+
+        <div class="formbold-textarea">
+
+            {{form.bio}}
+            <label for="message" class="formbold-form-label"> About Yourself : </label>
+        </div>
+
+        <div>
+            <label for="firstname" class="formbold-form-label"> Profile Pic : </label>
+            {{form.profileimage}}
+        </div>
+
+        <button class="formbold-btn" type="submit">
+            Confirm
+        </button>
+    </form>
+  </div>
+</div>
+</body>
+</html>
